@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labor-Effort Calculator</title>
+  <meta name="description"
+    content="Calculate the historical purchasing power of the US Dollar from 1913 to present using official CPI-U data.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.png" type="image/png">
+  <meta name="theme-color" content="#6366f1">
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- iOS Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Labor Effort">
+</head>
+
+<body>
+  <main class="app-container">
+    <header class="app-header">
+      <div class="logo-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon logo-icon" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+        <h1 class="app-title">Labor-Effort Calculator</h1>
+      </div>
+    </header>
+
+    <div class="calculator-card">
+      <form id="cpi-form" onsubmit="return false;">
+        <div class="input-group">
+          <label for="baseline-measure">Inflation Baseline</label>
+          <div class="select-wrapper">
+            <select id="baseline-measure" name="baseline-measure" required>
+              <option value="cpi-u" selected>CPI-U (Traditional)</option>
+              <option value="chained-cpi">Chained CPI-U (1999+)</option>
+              <option value="cpiw">CPI-W (Urban Wage Earners)</option>
+              <option value="core-cpi">Core CPI (Excl. Food & Energy)</option>
+              <option value="all">All Baselines (Columns)</option>
+            </select>
+            <div class="select-arrow"></div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="comparison-measure">
+            Comparison Measure
+            <button type="button" class="info-icon" id="info-labor-effort"
+              title="View Labor-Effort Methodology">ℹ</button>
+          </label>
+          <div class="select-wrapper">
+            <select id="comparison-measure" name="comparison-measure" required size="6">
+              <option value="none" selected>None (Standard Price Inflation)</option>
+              <optgroup label="SSA W-2 Annual Earnings (All Taxpayers - Tax Record Census)">
+                <option value="ssa-w2-20">SSA W-2 Earnings - 20th Percentile</option>
+                <option value="ssa-w2-40">SSA W-2 Earnings - 40th Percentile</option>
+                <option value="ssa-w2-50">SSA W-2 Earnings - 50th Percentile (Median)</option>
+                <option value="ssa-w2-60">SSA W-2 Earnings - 60th Percentile</option>
+                <option value="ssa-w2-80">SSA W-2 Earnings - 80th Percentile</option>
+              </optgroup>
+              <optgroup label="Census Individual Annual Income (Full-Time, Year-Round Only)">
+                <option value="census-ind-ft-50">Census Individual FT - 50th Percentile (Median)</option>
+              </optgroup>
+              <optgroup label="Census Individual Annual Income (All Workers - Combines Full/Part-Time)">
+                <option value="census-ind-all-20">Census Individual - 20th Percentile</option>
+                <option value="census-ind-all-40">Census Individual - 40th Percentile</option>
+                <option value="census-ind-all-50">Census Individual - 50th Percentile (Median)</option>
+                <option value="census-ind-all-60">Census Individual - 60th Percentile</option>
+                <option value="census-ind-all-80">Census Individual - 80th Percentile</option>
+                <option value="individual-median">Individual Median Income (Legacy FRED)</option>
+              </optgroup>
+              <optgroup label="Census Household Annual Income (All Residential Households)">
+                <option value="household-20">Household Income - 20th Percentile</option>
+                <option value="household-40">Household Income - 40th Percentile</option>
+                <option value="household-60">Household Income - 60th Percentile</option>
+                <option value="household-80">Household Income - 80th Percentile</option>
+              </optgroup>
+              <optgroup label="EPI Hourly Wages (Hourly Rate - Combines Full/Part-Time)">
+                <option value="epi-hr-10">EPI Hourly - 10th Percentile</option>
+                <option value="epi-hr-20">EPI Hourly - 20th Percentile</option>
+                <option value="epi-hr-30">EPI Hourly - 30th Percentile</option>
+                <option value="epi-hr-40">EPI Hourly - 40th Percentile</option>
+                <option value="epi-hr-50">EPI Hourly - 50th Percentile (Median)</option>
+                <option value="epi-hr-60">EPI Hourly - 60th Percentile</option>
+                <option value="epi-hr-70">EPI Hourly - 70th Percentile</option>
+                <option value="epi-hr-80">EPI Hourly - 80th Percentile</option>
+                <option value="epi-hr-90">EPI Hourly - 90th Percentile</option>
+              </optgroup>
+              <option value="all">All Median / Middle-Tier Labor Measures</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="amount">Amount to Convert</label>
+          <div class="currency-input-wrapper">
+            <span class="currency-symbol">$</span>
+            <input type="number" id="amount" name="amount" step="0.01" min="0.01" value="100.00" required
+              placeholder="0.00">
+          </div>
+        </div>
+
+        <div class="year-inputs">
+          <div class="input-group select-group">
+            <label for="base-year">Base Year</label>
+            <div class="select-wrapper">
+              <select id="base-year" name="base-year" required>
+                <option value="" disabled selected>Loading...</option>
+              </select>
+              <div class="select-arrow"></div>
+            </div>
+          </div>
+
+          <div class="input-group select-group">
+            <label for="target-year">Target Year</label>
+            <div class="select-wrapper">
+              <select id="target-year" name="target-year" required>
+                <option value="" disabled selected>Loading...</option>
+              </select>
+              <div class="select-arrow"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expandable-panel" id="education-adjustment-panel">
+          <div class="panel-header" id="edu-toggle-header">
+            <label class="checkbox-container" id="adjust-education-container">
+              <input type="checkbox" id="adjust-education" name="adjust-education">
+              <span class="checkmark"></span>
+              <span class="checkbox-label">Factor in Higher Education Costs</span>
+              <button type="button" class="info-icon" id="info-edu-adjustment" title="View Higher Education Methodology"
+                style="z-index: 10;">ℹ</button>
+            </label>
+            <span class="panel-arrow" id="edu-arrow">▼</span>
+          </div>
+          <div class="panel-content hidden" id="edu-panel-content">
+            <div class="year-inputs" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+              <div class="input-group">
+                <label for="working-years" class="small-label">Expected Working Years</label>
+                <input type="number" id="working-years" name="working-years" min="10" max="60" value="44"
+                  class="small-input">
+              </div>
+              <div class="input-group">
+                <label for="lost-years" class="small-label">Lost Years (College)</label>
+                <input type="number" id="lost-years" name="lost-years" min="0" max="10" value="4" class="small-input">
+              </div>
+            </div>
+
+            <div style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
+              <label class="checkbox-container">
+                <input type="checkbox" id="loan-finance" name="loan-finance">
+                <span class="checkmark"></span>
+                <span class="checkbox-label">Finance Tuition with Student Loans</span>
+              </label>
+            </div>
+
+            <div class="nested-panel hidden" id="loan-panel-content">
+              <div class="year-inputs" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                <div class="input-group">
+                  <label for="loan-rate" class="small-label">Loan Interest Rate (%)</label>
+                  <input type="number" id="loan-rate" name="loan-rate" min="0" max="25" step="0.1" value="5.0"
+                    class="small-input">
+                </div>
+                <div class="input-group">
+                  <label for="loan-term" class="small-label">Repayment Term (Years)</label>
+                  <input type="number" id="loan-term" name="loan-term" min="1" max="30" value="10" class="small-input">
+                </div>
+              </div>
+            </div>
+
+            <p class="panel-info-text">
+              Deducts amortized 4-year tuition/fees (after expected scholarships and grant aid) and opportunity costs
+              (lost earning years) from lifetime hours. Only affects labor-effort measures.
+            </p>
+          </div>
+        </div>
+
+        <button type="submit" id="calculate-btn" class="btn-primary" disabled>
+          <span>Calculate Value</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon btn-icon" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <section id="results-section" class="results-card hidden">
+      <h2 class="section-title">Resulting Purchasing Power</h2>
+
+      <div class="result-display">
+        <div class="result-value-container">
+          <span class="result-currency">$</span>
+          <span id="result-val">0.00</span>
+        </div>
+        <div id="inflation-percentage" class="percentage-badge positive">+0.0%</div>
+      </div>
+
+      <p id="explanation-text" class="explanation-paragraph">
+        Calculating inflation rates...
+      </p>
+
+      <div class="metadata-grid">
+        <div class="metadata-item">
+          <span class="metadata-label" id="base-year-label">Base Year CPI-U</span>
+          <span class="metadata-value" id="base-cpi-val">-</span>
+        </div>
+        <div class="divider"></div>
+        <div class="metadata-item">
+          <span class="metadata-label" id="target-year-label">Target Year CPI-U</span>
+          <span class="metadata-value" id="target-cpi-val">-</span>
+        </div>
+        <div id="base-effort-divider" class="divider hidden"></div>
+        <div id="base-effort-item" class="metadata-item hidden">
+          <span class="metadata-label">Base Year Labor Effort</span>
+          <span class="metadata-value" id="base-effort-val">-</span>
+        </div>
+        <div id="target-effort-divider" class="divider hidden"></div>
+        <div id="target-effort-item" class="metadata-item hidden">
+          <span class="metadata-label">Target Year Labor Effort</span>
+          <span class="metadata-value" id="target-effort-val">-</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparison-results-section" class="results-card hidden">
+      <h2 class="section-title">All Measures Comparison</h2>
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead id="comparison-table-header">
+            <!-- Dynamically populated headers -->
+          </thead>
+          <tbody id="comparison-table-body">
+            <!-- Dynamically populated rows -->
+          </tbody>
+        </table>
+      </div>
+      <p class="comparison-note">
+        <strong>Interpretation Note:</strong> CPI-U tracks general price inflation (cost of goods). Labor measures
+        calculate the purchasing effort (labor hours) required, where a wage increase above inflation over time makes
+        past prices feel "cheaper" in today's labor terms.
+      </p>
+    </section>
+
+    <footer class="app-footer">
+      <p>Calculations based on public dataset series from the U.S. Bureau of Labor Statistics, U.S. Census Bureau,
+        Social Security Administration, and others.</p>
+    </footer>
+  </main>
+
+  <div id="update-toast" class="update-toast hidden">
+    <div class="toast-content">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon toast-icon" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7.89M9 11l3 3L22 4" />
+      </svg>
+      <span>App updated! Reload to get latest data.</span>
+    </div>
+    <button onclick="window.location.reload()" class="btn-toast">Reload</button>
+  </div>
+
+  <!-- Methodology Modal -->
+  <div id="methodology-modal" class="modal hidden">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Methodology</h3>
+        <button type="button" class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Content will be injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "Labor-Effort Calculator",
+  "short_name": "Labor Effort",
+  "description": "A lightweight, offline-capable calculator that converts prices to labor-effort equivalents based on wage distributions and education costs.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "any"
+    }
+  ]
+}

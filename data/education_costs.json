@@ -1,0 +1,572 @@
+{
+  "1913": {
+    "graduation_rate": 0.02,
+    "annual_tuition_real": 200,
+    "total_tuition_real": 800
+  },
+  "1914": {
+    "graduation_rate": 0.021,
+    "annual_tuition_real": 203.7,
+    "total_tuition_real": 814.8
+  },
+  "1915": {
+    "graduation_rate": 0.0219,
+    "annual_tuition_real": 207.4,
+    "total_tuition_real": 829.6
+  },
+  "1916": {
+    "graduation_rate": 0.0229,
+    "annual_tuition_real": 211.1,
+    "total_tuition_real": 844.4
+  },
+  "1917": {
+    "graduation_rate": 0.0239,
+    "annual_tuition_real": 214.8,
+    "total_tuition_real": 859.2
+  },
+  "1918": {
+    "graduation_rate": 0.0248,
+    "annual_tuition_real": 218.5,
+    "total_tuition_real": 874.0
+  },
+  "1919": {
+    "graduation_rate": 0.0258,
+    "annual_tuition_real": 222.2,
+    "total_tuition_real": 888.8
+  },
+  "1920": {
+    "graduation_rate": 0.0267,
+    "annual_tuition_real": 225.9,
+    "total_tuition_real": 903.6
+  },
+  "1921": {
+    "graduation_rate": 0.0277,
+    "annual_tuition_real": 229.6,
+    "total_tuition_real": 918.4
+  },
+  "1922": {
+    "graduation_rate": 0.0287,
+    "annual_tuition_real": 233.3,
+    "total_tuition_real": 933.2
+  },
+  "1923": {
+    "graduation_rate": 0.0296,
+    "annual_tuition_real": 237.0,
+    "total_tuition_real": 948.0
+  },
+  "1924": {
+    "graduation_rate": 0.0306,
+    "annual_tuition_real": 240.7,
+    "total_tuition_real": 962.8
+  },
+  "1925": {
+    "graduation_rate": 0.0316,
+    "annual_tuition_real": 244.4,
+    "total_tuition_real": 977.6
+  },
+  "1926": {
+    "graduation_rate": 0.0325,
+    "annual_tuition_real": 248.1,
+    "total_tuition_real": 992.4
+  },
+  "1927": {
+    "graduation_rate": 0.0335,
+    "annual_tuition_real": 251.9,
+    "total_tuition_real": 1007.6
+  },
+  "1928": {
+    "graduation_rate": 0.0344,
+    "annual_tuition_real": 255.6,
+    "total_tuition_real": 1022.4
+  },
+  "1929": {
+    "graduation_rate": 0.0354,
+    "annual_tuition_real": 259.3,
+    "total_tuition_real": 1037.2
+  },
+  "1930": {
+    "graduation_rate": 0.0364,
+    "annual_tuition_real": 263.0,
+    "total_tuition_real": 1052.0
+  },
+  "1931": {
+    "graduation_rate": 0.0373,
+    "annual_tuition_real": 266.7,
+    "total_tuition_real": 1066.8
+  },
+  "1932": {
+    "graduation_rate": 0.0383,
+    "annual_tuition_real": 270.4,
+    "total_tuition_real": 1081.6
+  },
+  "1933": {
+    "graduation_rate": 0.0393,
+    "annual_tuition_real": 274.1,
+    "total_tuition_real": 1096.4
+  },
+  "1934": {
+    "graduation_rate": 0.0402,
+    "annual_tuition_real": 277.8,
+    "total_tuition_real": 1111.2
+  },
+  "1935": {
+    "graduation_rate": 0.0412,
+    "annual_tuition_real": 281.5,
+    "total_tuition_real": 1126.0
+  },
+  "1936": {
+    "graduation_rate": 0.0421,
+    "annual_tuition_real": 285.2,
+    "total_tuition_real": 1140.8
+  },
+  "1937": {
+    "graduation_rate": 0.0431,
+    "annual_tuition_real": 288.9,
+    "total_tuition_real": 1155.6
+  },
+  "1938": {
+    "graduation_rate": 0.0441,
+    "annual_tuition_real": 292.6,
+    "total_tuition_real": 1170.4
+  },
+  "1939": {
+    "graduation_rate": 0.045,
+    "annual_tuition_real": 296.3,
+    "total_tuition_real": 1185.2
+  },
+  "1940": {
+    "graduation_rate": 0.046,
+    "annual_tuition_real": 300,
+    "total_tuition_real": 1200
+  },
+  "1941": {
+    "graduation_rate": 0.0476,
+    "annual_tuition_real": 315.0,
+    "total_tuition_real": 1260.0
+  },
+  "1942": {
+    "graduation_rate": 0.0492,
+    "annual_tuition_real": 330.0,
+    "total_tuition_real": 1320.0
+  },
+  "1943": {
+    "graduation_rate": 0.0508,
+    "annual_tuition_real": 345.0,
+    "total_tuition_real": 1380.0
+  },
+  "1944": {
+    "graduation_rate": 0.0524,
+    "annual_tuition_real": 360.0,
+    "total_tuition_real": 1440.0
+  },
+  "1945": {
+    "graduation_rate": 0.054,
+    "annual_tuition_real": 375.0,
+    "total_tuition_real": 1500.0
+  },
+  "1946": {
+    "graduation_rate": 0.0556,
+    "annual_tuition_real": 390.0,
+    "total_tuition_real": 1560.0
+  },
+  "1947": {
+    "graduation_rate": 0.0572,
+    "annual_tuition_real": 405.0,
+    "total_tuition_real": 1620.0
+  },
+  "1948": {
+    "graduation_rate": 0.0588,
+    "annual_tuition_real": 420.0,
+    "total_tuition_real": 1680.0
+  },
+  "1949": {
+    "graduation_rate": 0.0604,
+    "annual_tuition_real": 435.0,
+    "total_tuition_real": 1740.0
+  },
+  "1950": {
+    "graduation_rate": 0.062,
+    "annual_tuition_real": 450,
+    "total_tuition_real": 1800
+  },
+  "1951": {
+    "graduation_rate": 0.0635,
+    "annual_tuition_real": 465.0,
+    "total_tuition_real": 1860.0
+  },
+  "1952": {
+    "graduation_rate": 0.065,
+    "annual_tuition_real": 480.0,
+    "total_tuition_real": 1920.0
+  },
+  "1953": {
+    "graduation_rate": 0.0665,
+    "annual_tuition_real": 495.0,
+    "total_tuition_real": 1980.0
+  },
+  "1954": {
+    "graduation_rate": 0.068,
+    "annual_tuition_real": 510.0,
+    "total_tuition_real": 2040.0
+  },
+  "1955": {
+    "graduation_rate": 0.0695,
+    "annual_tuition_real": 525.0,
+    "total_tuition_real": 2100.0
+  },
+  "1956": {
+    "graduation_rate": 0.071,
+    "annual_tuition_real": 540.0,
+    "total_tuition_real": 2160.0
+  },
+  "1957": {
+    "graduation_rate": 0.0725,
+    "annual_tuition_real": 555.0,
+    "total_tuition_real": 2220.0
+  },
+  "1958": {
+    "graduation_rate": 0.074,
+    "annual_tuition_real": 570.0,
+    "total_tuition_real": 2280.0
+  },
+  "1959": {
+    "graduation_rate": 0.0755,
+    "annual_tuition_real": 585.0,
+    "total_tuition_real": 2340.0
+  },
+  "1960": {
+    "graduation_rate": 0.077,
+    "annual_tuition_real": 600,
+    "total_tuition_real": 2400
+  },
+  "1961": {
+    "graduation_rate": 0.08,
+    "annual_tuition_real": 614.3,
+    "total_tuition_real": 2457.2
+  },
+  "1962": {
+    "graduation_rate": 0.083,
+    "annual_tuition_real": 628.6,
+    "total_tuition_real": 2514.4
+  },
+  "1963": {
+    "graduation_rate": 0.086,
+    "annual_tuition_real": 642.9,
+    "total_tuition_real": 2571.6
+  },
+  "1964": {
+    "graduation_rate": 0.089,
+    "annual_tuition_real": 657.1,
+    "total_tuition_real": 2628.4
+  },
+  "1965": {
+    "graduation_rate": 0.092,
+    "annual_tuition_real": 671.4,
+    "total_tuition_real": 2685.6
+  },
+  "1966": {
+    "graduation_rate": 0.095,
+    "annual_tuition_real": 685.7,
+    "total_tuition_real": 2742.8
+  },
+  "1967": {
+    "graduation_rate": 0.098,
+    "annual_tuition_real": 700,
+    "total_tuition_real": 2800
+  },
+  "1968": {
+    "graduation_rate": 0.101,
+    "annual_tuition_real": 733.3,
+    "total_tuition_real": 2933.2
+  },
+  "1969": {
+    "graduation_rate": 0.104,
+    "annual_tuition_real": 766.7,
+    "total_tuition_real": 3066.8
+  },
+  "1970": {
+    "graduation_rate": 0.107,
+    "annual_tuition_real": 800,
+    "total_tuition_real": 3200
+  },
+  "1971": {
+    "graduation_rate": 0.1125,
+    "annual_tuition_real": 795.0,
+    "total_tuition_real": 3180.0
+  },
+  "1972": {
+    "graduation_rate": 0.118,
+    "annual_tuition_real": 790.0,
+    "total_tuition_real": 3160.0
+  },
+  "1973": {
+    "graduation_rate": 0.1235,
+    "annual_tuition_real": 785.0,
+    "total_tuition_real": 3140.0
+  },
+  "1974": {
+    "graduation_rate": 0.129,
+    "annual_tuition_real": 780.0,
+    "total_tuition_real": 3120.0
+  },
+  "1975": {
+    "graduation_rate": 0.1345,
+    "annual_tuition_real": 775.0,
+    "total_tuition_real": 3100.0
+  },
+  "1976": {
+    "graduation_rate": 0.14,
+    "annual_tuition_real": 770.0,
+    "total_tuition_real": 3080.0
+  },
+  "1977": {
+    "graduation_rate": 0.1455,
+    "annual_tuition_real": 765.0,
+    "total_tuition_real": 3060.0
+  },
+  "1978": {
+    "graduation_rate": 0.151,
+    "annual_tuition_real": 760.0,
+    "total_tuition_real": 3040.0
+  },
+  "1979": {
+    "graduation_rate": 0.1565,
+    "annual_tuition_real": 755.0,
+    "total_tuition_real": 3020.0
+  },
+  "1980": {
+    "graduation_rate": 0.162,
+    "annual_tuition_real": 750,
+    "total_tuition_real": 3000
+  },
+  "1981": {
+    "graduation_rate": 0.1671,
+    "annual_tuition_real": 795.0,
+    "total_tuition_real": 3180.0
+  },
+  "1982": {
+    "graduation_rate": 0.1722,
+    "annual_tuition_real": 840.0,
+    "total_tuition_real": 3360.0
+  },
+  "1983": {
+    "graduation_rate": 0.1773,
+    "annual_tuition_real": 885.0,
+    "total_tuition_real": 3540.0
+  },
+  "1984": {
+    "graduation_rate": 0.1824,
+    "annual_tuition_real": 930.0,
+    "total_tuition_real": 3720.0
+  },
+  "1985": {
+    "graduation_rate": 0.1875,
+    "annual_tuition_real": 975.0,
+    "total_tuition_real": 3900.0
+  },
+  "1986": {
+    "graduation_rate": 0.1926,
+    "annual_tuition_real": 1020.0,
+    "total_tuition_real": 4080.0
+  },
+  "1987": {
+    "graduation_rate": 0.1977,
+    "annual_tuition_real": 1065.0,
+    "total_tuition_real": 4260.0
+  },
+  "1988": {
+    "graduation_rate": 0.2028,
+    "annual_tuition_real": 1110.0,
+    "total_tuition_real": 4440.0
+  },
+  "1989": {
+    "graduation_rate": 0.2079,
+    "annual_tuition_real": 1155.0,
+    "total_tuition_real": 4620.0
+  },
+  "1990": {
+    "graduation_rate": 0.213,
+    "annual_tuition_real": 1200,
+    "total_tuition_real": 4800
+  },
+  "1991": {
+    "graduation_rate": 0.2173,
+    "annual_tuition_real": 1300.0,
+    "total_tuition_real": 5200.0
+  },
+  "1992": {
+    "graduation_rate": 0.2216,
+    "annual_tuition_real": 1400.0,
+    "total_tuition_real": 5600.0
+  },
+  "1993": {
+    "graduation_rate": 0.2259,
+    "annual_tuition_real": 1500.0,
+    "total_tuition_real": 6000.0
+  },
+  "1994": {
+    "graduation_rate": 0.2302,
+    "annual_tuition_real": 1600.0,
+    "total_tuition_real": 6400.0
+  },
+  "1995": {
+    "graduation_rate": 0.2345,
+    "annual_tuition_real": 1700.0,
+    "total_tuition_real": 6800.0
+  },
+  "1996": {
+    "graduation_rate": 0.2388,
+    "annual_tuition_real": 1800.0,
+    "total_tuition_real": 7200.0
+  },
+  "1997": {
+    "graduation_rate": 0.2431,
+    "annual_tuition_real": 1900.0,
+    "total_tuition_real": 7600.0
+  },
+  "1998": {
+    "graduation_rate": 0.2474,
+    "annual_tuition_real": 2000.0,
+    "total_tuition_real": 8000.0
+  },
+  "1999": {
+    "graduation_rate": 0.2517,
+    "annual_tuition_real": 2100.0,
+    "total_tuition_real": 8400.0
+  },
+  "2000": {
+    "graduation_rate": 0.256,
+    "annual_tuition_real": 2200,
+    "total_tuition_real": 8800
+  },
+  "2001": {
+    "graduation_rate": 0.2603,
+    "annual_tuition_real": 2340.0,
+    "total_tuition_real": 9360.0
+  },
+  "2002": {
+    "graduation_rate": 0.2646,
+    "annual_tuition_real": 2480.0,
+    "total_tuition_real": 9920.0
+  },
+  "2003": {
+    "graduation_rate": 0.2689,
+    "annual_tuition_real": 2620.0,
+    "total_tuition_real": 10480.0
+  },
+  "2004": {
+    "graduation_rate": 0.2732,
+    "annual_tuition_real": 2760.0,
+    "total_tuition_real": 11040.0
+  },
+  "2005": {
+    "graduation_rate": 0.2775,
+    "annual_tuition_real": 2900.0,
+    "total_tuition_real": 11600.0
+  },
+  "2006": {
+    "graduation_rate": 0.2818,
+    "annual_tuition_real": 3040.0,
+    "total_tuition_real": 12160.0
+  },
+  "2007": {
+    "graduation_rate": 0.2861,
+    "annual_tuition_real": 3180.0,
+    "total_tuition_real": 12720.0
+  },
+  "2008": {
+    "graduation_rate": 0.2904,
+    "annual_tuition_real": 3320.0,
+    "total_tuition_real": 13280.0
+  },
+  "2009": {
+    "graduation_rate": 0.2947,
+    "annual_tuition_real": 3460.0,
+    "total_tuition_real": 13840.0
+  },
+  "2010": {
+    "graduation_rate": 0.299,
+    "annual_tuition_real": 3600,
+    "total_tuition_real": 14400
+  },
+  "2011": {
+    "graduation_rate": 0.3066,
+    "annual_tuition_real": 3520.0,
+    "total_tuition_real": 14080.0
+  },
+  "2012": {
+    "graduation_rate": 0.3142,
+    "annual_tuition_real": 3440.0,
+    "total_tuition_real": 13760.0
+  },
+  "2013": {
+    "graduation_rate": 0.3218,
+    "annual_tuition_real": 3360.0,
+    "total_tuition_real": 13440.0
+  },
+  "2014": {
+    "graduation_rate": 0.3294,
+    "annual_tuition_real": 3280.0,
+    "total_tuition_real": 13120.0
+  },
+  "2015": {
+    "graduation_rate": 0.337,
+    "annual_tuition_real": 3200.0,
+    "total_tuition_real": 12800.0
+  },
+  "2016": {
+    "graduation_rate": 0.3446,
+    "annual_tuition_real": 3120.0,
+    "total_tuition_real": 12480.0
+  },
+  "2017": {
+    "graduation_rate": 0.3522,
+    "annual_tuition_real": 3040.0,
+    "total_tuition_real": 12160.0
+  },
+  "2018": {
+    "graduation_rate": 0.3598,
+    "annual_tuition_real": 2960.0,
+    "total_tuition_real": 11840.0
+  },
+  "2019": {
+    "graduation_rate": 0.3674,
+    "annual_tuition_real": 2880.0,
+    "total_tuition_real": 11520.0
+  },
+  "2020": {
+    "graduation_rate": 0.375,
+    "annual_tuition_real": 2800,
+    "total_tuition_real": 11200
+  },
+  "2021": {
+    "graduation_rate": 0.3772,
+    "annual_tuition_real": 2675.0,
+    "total_tuition_real": 10700.0
+  },
+  "2022": {
+    "graduation_rate": 0.3795,
+    "annual_tuition_real": 2550.0,
+    "total_tuition_real": 10200.0
+  },
+  "2023": {
+    "graduation_rate": 0.3818,
+    "annual_tuition_real": 2425.0,
+    "total_tuition_real": 9700.0
+  },
+  "2024": {
+    "graduation_rate": 0.384,
+    "annual_tuition_real": 2300,
+    "total_tuition_real": 9200
+  },
+  "2025": {
+    "graduation_rate": 0.387,
+    "annual_tuition_real": 2250.0,
+    "total_tuition_real": 9000.0
+  },
+  "2026": {
+    "graduation_rate": 0.39,
+    "annual_tuition_real": 2200,
+    "total_tuition_real": 8800
+  }
+}
