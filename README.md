@@ -4,18 +4,16 @@ A lightweight, offline-capable Progressive Web Application (PWA) that measures t
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 * **Multi-Index Inflation Baselines**: Supports **CPI-U** (Consumer Price Index for All Urban Consumers), **Chained CPI-U** (chained index accounting for consumer substitution), **CPI-W** (Urban Wage Earners & Clerical Workers), and **Core CPI** (excluding food & energy).
 * **Labor-Effort & Wage Distributions**: Evaluates purchasing power changes across individual median earnings, household income quintiles (20th, 40th, 60th, 80th, 95th percentiles), EPI hourly wages, Census ASEC percentiles, and SSA W-2 earnings.
 * **Higher Education Cost Adjustments**: Accounts for both foregone working years (opportunity cost) and tuition capital costs (after expected scholarships and grant aid), amortized across expected career working years and weighted by historical college graduation attainment rates.
 * **Student Loan Real Debt Discounting**: Calculates the inflation erosion of fixed-rate student debt over 10-year (or custom) repayment terms, dynamically categorizing inflation rates as `historic` or `projected` (using a post-1983 historical average baseline of **2.88%** for future years).
-* **Interactive Methodology Modals**: Clickable info buttons (`ℹ`) display formulas, data sources, and mathematical derivations directly within the web app.
-* **100% Offline-Capable PWA**: Service Worker caching enables instant reloads and full offline capabilities on desktop and mobile devices.
 
 ---
 
-## 💻 Local Development & Testing
+## Local Development & Testing
 
 ### Running Locally
 To launch the app locally using Python's built-in HTTP server:
@@ -34,22 +32,22 @@ node tests/app.test.js
 
 ---
 
-## 📊 Data Methodology
+## Data Methodology
 
 ### 1. Data Sources & Worker Type Compositions
 
-Wages and earnings are sourced from authoritative national statistical databases. Because each dataset is compiled differently, it is critical to understand their underlying **worker type compositions** when interpreting purchasing power trends.
+Wages and earnings are sourced from national statistical databases. Because each dataset is compiled differently, it is critical to understand their underlying **worker type compositions** when interpreting purchasing power trends.
 
 | Dataset Name | Source | Historical Range | Worker Type Composition | Key Characteristics |
 | :--- | :--- | :--- | :--- | :--- |
-| **SSA Net Compensation** | U.S. Social Security Administration (SSA) | 1991–2023 | **Combined W-2 Earners** | **Pure W-2 Labor Earnings**: Taxable W-2 compensation percentiles (20th to 95th) from official IRS tax records. Excludes non-labor cash inflows. *(Derived via linear CDF interpolation across binned tax brackets).* |
+| **SSA Net Compensation** | U.S. Social Security Administration (SSA) | 1991–2023 | **Combined W-2 Earners** | **Pure W-2 Labor Earnings**: Taxable W-2 compensation percentiles (20th to 80th) from official IRS tax records. Excludes non-labor cash inflows. *(Derived via linear CDF interpolation across binned tax brackets).* |
 | **Census Individual Income (Full-Time, Year-Round)** | U.S. Census Bureau (CPS ASEC Table P-38) | 1967–2024 | **Full-Time, Year-Round Only** | **Active Career Earners**: Median annual earnings for individuals working 35+ hours/week for 50–52 weeks/year. Isolates stable full-time labor income. Excludes non-labor cash inflows. *(Direct published medians).* |
 | **Census Individual Income (All Workers)** | U.S. Census Bureau (CPS ASEC Table P-54) | 1967–2024 | **All Earners (15+)** | **Total Individual Money Income**: Combines pre-tax wages plus non-labor cash inflows (Social Security, pensions, disability, unemployment, welfare, interest) for a single individual. Includes part-time, seasonal, and non-working individuals. *(Derived via linear CDF interpolation across binned income brackets).* |
+| **Individual Median Income (Legacy FRED)** | Federal Reserve Bank of St. Louis (FRED `MEPAINUSA646N`) | 1974–2024 | **Individual Earners** | **Legacy Individual Median**: Represents the legacy FRED median individual income baseline. |
 | **Census Household Income** | U.S. Census Bureau (CPS ASEC Table H-1) | 1967–2024 | **All Residential Households** | **Total Household Money Income**: Combines pre-tax wages plus non-labor cash inflows (Social Security, pensions, disability, unemployment, welfare, interest) aggregated across all resident members of the household unit. Includes retired, unemployed, and non-working household units. *(Direct published quintile limits).* |
 | **EPI Hourly Wages** | Economic Policy Institute (EPI) State of Working America | 1973–2025 | **Active Hourly Earners** | **Pure Hourly Labor Rate**: Measures wage rates per hour (deciles 10th to 90th) extracted from BLS CPS microdata. Unaffected by hours-worked variations. Excludes non-labor cash inflows. *(Direct published deciles).* |
-| **Individual Median Income (Legacy FRED)** | Federal Reserve Bank of St. Louis (FRED `MEPAINUSA646N`) | 1974–2024 | **Individual Earners** | **Legacy Individual Median**: Represents the legacy FRED median individual income baseline. |
 
-#### 📐 Percentile Derivation: Direct Published Values vs. Linear Interpolation
+#### Percentile Derivation: Direct Published Values vs. Linear Interpolation
 * **Direct Published Percentiles**: EPI Hourly Wages, Census Full-Time (P-38), Census Household Income (H-1), and FRED Individual Median are published directly by source agencies as exact percentile dollar thresholds.
 * **Linear Interpolation**: SSA Net Compensation and Census Individual All Workers (P-54) are published as grouped frequency tables (counts of workers falling within income ranges). To extract estimated 20th, 40th, 50th, 60th, and 80th percentile values, we applied linear interpolation across the Cumulative Distribution Function of the bounding bracket intervals.
 

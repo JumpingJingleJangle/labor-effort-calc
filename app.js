@@ -496,9 +496,9 @@ function calculateComparisonTable(amount, baseYear, targetYear, measure, baselin
       'ssa-w2-50',
       'census-ind-ft-50',
       'census-ind-all-50',
+      'individual-median',
       'household-60',
-      'epi-hr-50',
-      'individual-median'
+      'epi-hr-50'
     ]
     : [measure];
 
@@ -878,12 +878,12 @@ function openMethodologyModal(id) {
       <h2>2. Data Foundations</h2>
       <p>Wages are sourced from reputable national historical distributions. When comparing datasets, pay close attention to <strong>worker type composition</strong>:</p>
       <ul>
-        <li><strong>SSA W-2 Net Compensation</strong>: Sourced from U.S. Social Security Administration (SSA) Net Compensation Distributions (1991–2023). Tracks taxable W-2 compensation percentiles (20th to 95th) from official IRS tax records. Excludes non-labor cash inflows. <em>(Derived via linear CDF interpolation across binned tax brackets)</em>.</li>
+        <li><strong>SSA W-2 Net Compensation</strong>: Sourced from U.S. Social Security Administration (SSA) Net Compensation Distributions (1991–2023). Tracks taxable W-2 compensation percentiles (20th to 80th) from official IRS tax records. Excludes non-labor cash inflows. <em>(Derived via linear CDF interpolation across binned tax brackets)</em>.</li>
         <li><strong>Census Individual Income (Full-Time, Year-Round)</strong>: Sourced from U.S. Census Bureau CPS ASEC Table P-38 (1967–2024). Tracks median annual earnings for full-time career workers (35+ hours/week, 50–52 weeks/year). Isolates stable full-time labor income and excludes non-labor cash inflows. <em>(Direct published medians)</em>.</li>
         <li><strong>Census Individual Income (All Workers)</strong>: Sourced from U.S. Census Bureau CPS ASEC Table P-54 (1967–2024). Tracks <em>Total Individual Money Income</em> percentiles (20th to 80th). Combines pre-tax wages plus non-labor cash inflows (Social Security, pensions, disability, unemployment, welfare, interest) for a single individual. Includes part-time, seasonal, and non-working individuals. <em>(Derived via linear CDF interpolation across binned income brackets)</em>.</li>
+        <li><strong>Individual Median Income (Legacy FRED)</strong>: Sourced from Federal Reserve Bank of St. Louis (FRED Series <code>MEPAINUSA646N</code>, 1974–2024), representing the legacy median individual income baseline.</li>
         <li><strong>Census Household Income</strong>: Sourced from U.S. Census Bureau CPS ASEC Table H-1 (1967–2024). Tracks <em>Total Household Money Income</em> percentiles (20th to 80th). Combines pre-tax wages plus non-labor cash inflows (Social Security, pensions, disability, unemployment, welfare, interest) aggregated across all resident members of the household unit. Includes retired, unemployed, and non-working household units. <em>(Direct published quintile limits)</em>.</li>
         <li><strong>EPI Hourly Wages</strong>: Sourced from Economic Policy Institute (EPI) State of Working America Data Library (1973–2025). Tracks nominal wage rates per hour (deciles 10th to 90th) extracted from BLS CPS microdata. Unaffected by hours-worked variations and excludes non-labor cash inflows. <em>(Direct published deciles)</em>.</li>
-        <li><strong>Individual Median Income (Legacy FRED)</strong>: Sourced from Federal Reserve Bank of St. Louis (FRED Series <code>MEPAINUSA646N</code>, 1974–2024), representing the legacy median individual income baseline.</li>
       </ul>
       <p><strong>Money Income vs. Pure Labor Compensation</strong>: Census Household (H-1) and Individual All Workers (P-54) measure Total Pre-Tax Money Income (wages plus non-labor cash inflows: Social Security, pensions, disability, unemployment, welfare, interest). In contrast, Census Full-Time (P-38), SSA W-2 earnings, and EPI hourly wages measure Pure Labor Compensation (wages, salaries, net self-employment).</p>
       <p><strong>Percentile Derivation Note</strong>: While EPI Hourly, Census Full-Time (P-38), Census Household (H-1), and FRED series are published directly as exact percentile dollar amounts, both SSA W-2 earnings and Census Individual All Workers (P-54) are published as binned frequency distributions. For SSA and P-54, we applied <strong>linear interpolation across Cumulative Distribution Functions (CDFs)</strong> of the bounding brackets to extract estimated 20th, 40th, 50th, 60th, and 80th percentile threshold values. Furthermore, since Table P-54 is published in constant 2024 dollars, its interpolated values are converted back into historical nominal dollars for each respective year using the baseline CPI deflator, preventing inflation double-adjustments.</p>
